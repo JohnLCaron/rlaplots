@@ -7,12 +7,17 @@ version = "1.0-SNAPSHOT"
 
 repositories {
     mavenCentral()
+    maven("https://packages.jetbrains.team/maven/p/kds/kotlin-ds-maven")
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlinx:kandy-lets-plot:0.6.0")
-    implementation("org.jetbrains.kotlinx:kotlin-statistics-jvm:0.2.1")
+    implementation(files("libs/rlauxe-1.0-SNAPSHOT-uber.jar"))
 
+    implementation(kotlin("stdlib"))
+    implementation("org.jetbrains.kotlinx:kotlin-statistics-jvm:0.3.1")
+    implementation("org.jetbrains.kotlinx:kandy-lets-plot:0.7.0")
+
+    implementation(libs.lets.plot)
     testImplementation(kotlin("test"))
 }
 
